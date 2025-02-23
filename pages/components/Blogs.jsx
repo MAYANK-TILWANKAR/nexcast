@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
-import Footer from "./components/subC/Footer";
-import Navbar from "./components/subC/Navbar";
+import Footer from "./Footer";
+import Navbar from "./Navbar";
 
 const Blogs = () => {
   const blogPosts = [

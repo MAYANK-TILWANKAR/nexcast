@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "./components/subC/Navbar";
+import Navbar from "./Navbar";
 
 const contact = () => {
   return (

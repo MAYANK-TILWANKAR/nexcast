@@ -7,8 +7,8 @@ import "swiper/css";
 
 const OurResults = () => {
   return (
-    <section className="text-center py-10 md:py-20 px-4 md:px-0">
-      <h2 className="text-3xl md:text-4xl font-bold mb-4 md:mb-6">
+    <section className="text-center py-10 md:py-20 px-4 md:px-0 bg-black">
+      {/* <h2 className="text-3xl md:text-4xl font-bold mb-4 md:mb-6">
         Our Results
       </h2>
       <p className="text-gray-500 max-w-xl mx-auto mb-8 md:mb-12 text-sm md:text-base">
@@ -58,9 +58,9 @@ const OurResults = () => {
             Engagement we provided for our client&apos;s business
           </p>
         </div>
-      </div>
+      </div> */}
 
-      <p className="text-gray-500 mt-16 md:mt-24 text-sm md:text-base">
+      <p className="text-gray-50 mt-16 md:mt-24 text-sm md:text-base">
         And we&apos;ve spent 3 years doing it with great teams at
       </p>
       <Image
