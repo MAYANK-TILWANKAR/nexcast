@@ -1,6 +1,5 @@
 import React from "react";
 import Image from "next/image";
-import styled from "styled-components";
 
 const FiveServices = () => {
   const services = [
@@ -62,8 +61,11 @@ const FiveServices = () => {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-12 max-w-[1300px] mx-auto">
         {services.map((service, index) => (
-          <StyledWrapper key={index} bgColor={service.bgColor}>
-            <div className="card border-4 border-white">
+          <div key={index} className="group">
+            <div 
+              className="w-full text-center p-6 md:p-8 rounded-lg border-4 border-white h-[400px] md:h-[500px] flex flex-col justify-center items-center gap-4 md:gap-5 relative overflow-hidden transition-all duration-300"
+              style={{ background: service.bgColor }}
+            >
               <div className="relative w-full h-48 md:h-64 mb-4 md:mb-6 overflow-hidden rounded-xl">
                 <Image
                   src={service.image}
@@ -73,87 +75,18 @@ const FiveServices = () => {
                   priority={index < 2}
                 />
               </div>
-              <strong className="text-lg md:text-xl lg:text-2xl">{service.title}</strong>
-              <div className="card__description text-sm md:text-base lg:text-lg">{service.description}</div>
+              <strong className="block text-lg md:text-xl lg:text-2xl text-white transition-all duration-300">
+                {service.title}
+              </strong>
+              <div className="absolute inset-0 w-full h-full flex justify-center items-center bg-black/85 text-white p-6 md:p-8 rounded-lg font-medium text-sm md:text-base lg:text-lg opacity-0 translate-y-full group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                {service.description}
+              </div>
             </div>
-          </StyledWrapper>
+          </div>
         ))}
       </div>
     </section>
   );
 };
-
-const StyledWrapper = styled.div`
-  .card {
-    width: 100%;
-    text-align: center;
-    background: ${props => props.bgColor};
-    padding: 1.5em;
-    border-radius: 8px;
-    position: relative;
-    overflow: hidden;
-    transition: 0.3s cubic-bezier(0.6, 0.4, 0, 1);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 1em;
-    color: white;
-    height: 400px;
-    
-    @media (min-width: 768px) {
-      padding: 2em;
-      padding-block: 2.2em;
-      height: 500px;
-      gap: 1.2em;
-    }
-  }
-
-  .card__description {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: rgba(0, 0, 0, 0.85);
-    color: white;
-    padding: 1.5em;
-    border-radius: 8px;
-    font-weight: 500;
-    opacity: 0;
-    transform: translateY(100%);
-    transition: all 0.3s cubic-bezier(0.6, 0.4, 0, 1);
-
-    @media (min-width: 768px) {
-      padding: 2em;
-    }
-  }
-
-  .card > strong {
-    display: block;
-    font-size: 1.2rem;
-    letter-spacing: -0.035em;
-    transition: 0.3s cubic-bezier(0.6, 0.4, 0, 1);
-
-    @media (min-width: 768px) {
-      font-size: 1.6rem;
-    }
-  }
-
-  .card:hover .card__description {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  @media (hover: none) {
-    .card__description {
-      opacity: 1;
-      transform: translateY(0);
-      background: rgba(0, 0, 0, 0.7);
-    }
-  }
-`;
 
 export default FiveServices;

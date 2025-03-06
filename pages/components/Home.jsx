@@ -13,24 +13,22 @@ const PitchhmeLanding = () => {
 
         {/* Main Section */}
         <main className="px-4 md:px-14 flex-grow flex flex-col justify-end">
-          <div className="flex justify-center mb-16">
-            <h1 className="text-4xl sm:text-4xl md:text-7xl font-bold mb-6 uppercase text-[#ffffff]">
+          <div className="flex justify-center sm:mb-32 mb-16">
+            <h1 className="text-4xl sm:text-4xl md:text-7xl font-bold mb-6 uppercase text-[#000000] font-[masiku]">
               Nex<span className="bg-[#AFFE14] border-2 md:border-4 border-[#000000] rounded-lg md:rounded-xl text-[#010101] px-1 md:px-2 mx-1 md:mx-2 hover:scale-110 transition-transform">cast</span>
             </h1>
           </div>
 
           <div className="mb-14">
-            <div className="text-gray-300 text-base sm:text-lg md:text-lg mb-4 uppercase font-bold animate-fadeIn">
+            <h2 className="text-gray-950 text-base sm:text-lg md:text-lg mb-4 uppercase font-bold animate-fadeIn">
               Creative content marketing solutions{" "}
-            </div>
-            <h1 className="text-xl sm:text-2xl md:text-[40px] uppercase font-semibold leading-tight tracking-[-2%] mb-6 animate-slideIn">
-              Your brand deserves more than just a one-night click!
-            </h1>
-            <p className="text-sm sm:text-base md:text-base text-gray-100 animate-fadeIn">
-              Craft smarter, faster, and measurable marketing strategies{" "}
-              <br className="hidden md:inline" /> that bring next-level results
-              — truly badhiya.
-            </p>
+            </h2>
+            <div className="max-w-3xl">
+            <h2 className="text-gray-900 text-xl sm:text-2xl md:text-[43px] uppercase font-bold leading-tight tracking-[-2%] mb-2 ">
+            Helping Influencers Get Their</h2>
+            <h2 className="text-gray-900 text-xl sm:text-2xl md:text-[43px] uppercase font-bold leading-tight tracking-[-2%]">
+            First Brand Deal & Grow Faster</h2>
+           </div>
           </div>
         </main>
       </div>

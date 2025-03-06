@@ -1,7 +1,5 @@
 import React from "react";
 import Home from "./components/Home";
-
-import Mv from "./components/Mv";
 import Footer from "./components/Footer";
 import OurResults from "./components/Results";
 import Work from "./components/Work";
@@ -11,28 +9,29 @@ import About from "./components/Aboutus";
 import Banner from "./components/Banner";
 import Ourresults from "./components/Ourresults";
 import Industries from "./components/Industries";
+import Chooseus from "./components/Chooseus";
 const Index = () => {
   return (
     <>
-    
-    <div className="overflow-x-hidden">
-      <Home />
-<Banner/>
-        <About />
-      <Ourresults/>
-   
+      <div className="overflow-x-hidden">
+        <Home />
+        <Banner />
 
-     
+        <About />
+        <Chooseus/>
+        <div id="results">
+        <Ourresults />
+        </div>
     
         <FiveServices />
-        <Test/>
-        <Industries/>
-    
-      <Work />
-      <OurResults />
-
-      <Footer />
-    </div>
+        <div className="hidden md:block">
+          <Test />
+        </div>
+        <Industries />
+        <Work />
+        <OurResults />
+        <Footer />
+      </div>
     </>
   );
 };

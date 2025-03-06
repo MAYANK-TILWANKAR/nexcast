@@ -9,11 +9,11 @@ const Footer = () => {
           <div className="space-y-4">
             <div className="flex items-center">
               {/* Logo */}
-              <div className="bg-blue-500 p-1 rounded-lg mr-3">
+              <div className="bg-[#AFFE14] p-1 rounded-lg mr-3">
                 <svg
                   d="0"
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6 text-white"
+                  className="h-6 w-6 text-black"
                   viewBox="0 0 20 20"
                   fill="currentColor">
                   <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z" />
@@ -21,7 +21,7 @@ const Footer = () => {
               </div>
               <div>
                 <h2 className="text-xl font-bold">Nexcast</h2>
-                <p className="text-xs text-gray-400">Innovate with us</p>
+                <p className="text-xs text-gray-400">Helping Influencers Get Their First Brand Deal</p>
               </div>
             </div>
 
@@ -30,18 +30,16 @@ const Footer = () => {
                 LET&apos;S TALK
               </h3>
               <p className="text-sm mb-4 text-gray-300 leading-relaxed">
-                Ready to take your brand&apos;s online presence to the next
-                level? We&apos;d love to hear from you! Whether you&apos;re
-                looking to boost engagement, grow your audience, or need help
-                crafting the perfect social media strategy, our team is here to
-                help. Let&apos;s start the conversation and bring your vision to
-                life.
+                Ready to land your first brand deal? We&apos;d love to help you get started! 
+                Whether you&apos;re just starting out or looking to take your influence to the next level, 
+                our team specializes in connecting emerging creators with brands. Let&apos;s work together 
+                to launch your influencer career.
               </p>
 
               <a
                 href="#"
-                className="inline-block bg-blue-500 text-white font-bold py-2 px-6 rounded-full shadow-lg hover:bg-blue-600 transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105 text-sm">
-                TELL US ABOUT YOUR PROJECT
+                className="inline-block bg-[#AFFE14] text-black font-bold py-2 px-6 rounded-full shadow-lg hover:bg-opacity-90 transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105 text-sm">
+                START YOUR JOURNEY
               </a>
             </div>
           </div>
@@ -51,16 +49,15 @@ const Footer = () => {
             <div>
               <h3 className="text-2xl font-bold mb-2 text-white">NEWSLETTER</h3>
               <p className="text-sm mb-4 text-gray-300 leading-relaxed">
-                Don&apos;t miss out on the secret sauce of social media success!
-                🌟 Subscribe to our newsletter and get exclusive tips, tricks,
-                and a dash of humor (because who said learning can&apos;t be
-                fun?) straight to your inbox. Your future self will thank you,
-                and so will your followers! 😎📧
+                Want insider tips on landing brand deals? 🌟 Subscribe to our newsletter for exclusive 
+                insights, proven strategies, and real success stories from creators just like you! 
+                Plus, get first access to brand collaboration opportunities! 🚀 Join our community 
+                of rising influencers today! 💫
               </p>
             </div>
             <form className="space-y-3 max-w-sm">
               <div className="flex items-center">
-                <div className="bg-blue-50 p-2 rounded-full mr-2">
+                <div className="bg-[#AFFE14] p-2 rounded-full mr-2">
                   <svg
                     d="0"
                     xmlns="http://www.w3.org/2000/svg"
@@ -74,7 +71,7 @@ const Footer = () => {
                 <input
                   type="email"
                   placeholder="Enter your email"
-                  className="py-1 px-5 w-64 text-black bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm rounded-full"
+                  className="py-1 px-5 w-64 text-black bg-white focus:outline-none focus:ring-2 focus:ring-[#AFFE14] text-sm rounded-full"
                   required
                 />
               </div>
@@ -83,7 +80,7 @@ const Footer = () => {
                 <input
                   type="checkbox"
                   id="terms"
-                  className="mr-2 h-3 w-3 text-blue-500 focus:ring-blue-500 border-gray-300 rounded"
+                  className="mr-2 h-3 w-3 text-[#AFFE14] focus:ring-[#AFFE14] border-gray-300 rounded"
                   required
                 />
                 <label htmlFor="terms" className="text-xs text-gray-300">
@@ -94,7 +91,7 @@ const Footer = () => {
               <div className="flex justify-center">
                 <button
                   type="submit"
-                  className="w-32 bg-white text-black font-bold py-1  rounded-full shadow-md hover:bg-gray-100 transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105 text-sm mr-24">
+                  className="w-32 bg-white text-black font-bold py-1 rounded-full shadow-md hover:bg-gray-100 transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105 text-sm mr-24">
                   SEND
                 </button>
               </div>
@@ -106,17 +103,17 @@ const Footer = () => {
         <div className="mt-10 border-t border-gray-700 pt-5 relative z-10">
           <div className="px-4 sm:px-10 flex flex-col md:flex-row justify-between items-center">
             <p className="text-base mb-2 md:mb-0 text-gray-400">
-              Email:{" "}
+              Follow us on Instagram:{" "}
               <a
-                href="mailto:business@socialdevs.in"
-                className="text-blue-100 hover:underline">
-                hello@nexcast.co.in
+                href="https://instagram.com/NexcastOfficial"
+                className="text-[#AFFE14] hover:underline">
+                @NexcastOfficial
               </a>
             </p>
             <div className="flex space-x-4 mt-4 md:mt-0">
               <a
                 href="#"
-                className="text-gray-400 hover:text-blue-500 transition duration-300">
+                className="text-gray-400 hover:text-[#AFFE14] transition duration-300">
                 <svg
                   d="0"
                   className="h-5 w-5"
@@ -132,7 +129,7 @@ const Footer = () => {
               </a>
               <a
                 href="#"
-                className="text-gray-400 hover:text-blue-400 transition duration-300">
+                className="text-gray-400 hover:text-[#AFFE14] transition duration-300">
                 <svg
                   d="0"
                   className="h-5 w-5"
@@ -143,8 +140,8 @@ const Footer = () => {
                 </svg>
               </a>
               <a
-                href="#"
-                className="text-gray-400 hover:text-pink-500 transition duration-300">
+                href="https://instagram.com/NexcastOfficial"
+                className="text-gray-400 hover:text-[#AFFE14] transition duration-300">
                 <svg
                   d="0"
                   className="h-5 w-5"
@@ -160,7 +157,7 @@ const Footer = () => {
               </a>
               <a
                 href="#"
-                className="text-gray-400 hover:text-blue-600 transition duration-300">
+                className="text-gray-400 hover:text-[#AFFE14] transition duration-300">
                 <svg
                   d="0"
                   className="h-5 w-5"

@@ -61,13 +61,14 @@ const Industries = () => {
         <div
           ref={headerRef}
           className="flex flex-col justify-start items-start lg:max-w-[1200px] mx-auto pt-6 md:pt-10 px-4 md:px-6 text-left">
-          <h1 className="text-white text-2xl md:text-3xl lg:text-3xl font-semibold mb-3 md:mb-5 uppercase">
+          <h1 className="text-white text-2xl md:text-3xl lg:text-4xl font-semibold mb-3 md:mb-5 uppercase">
             Industries that we serve
           </h1>
           <p className="text-white text-sm md:text-base font-normal text-left max-w-3xl sm:block hidden">
             We achieved the business transformation objectives by utilising
             advanced technology to produce exceptional results.
           </p>
+          <div className="w-20 h-1 bg-[#AFFE14] mt-5"></div>
         </div>
 
         {/* Grid section */}

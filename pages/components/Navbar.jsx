@@ -6,6 +6,7 @@ const Navbar = () => {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
+  const [showDropdown, setShowDropdown] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,12 +30,43 @@ const Navbar = () => {
           <Link href="/" className="text-white hover:text-[#AFFE14] transition-colors duration-300">
             Home
           </Link>
-          <Link href="/work" className="text-white hover:text-[#AFFE14] transition-colors duration-300">
+          <Link href="#results" className="text-white hover:text-[#AFFE14] transition-colors duration-300">
             Our Impact
           </Link>
-          <Link href="#services" className="text-white hover:text-[#AFFE14] transition-colors duration-300">
-            What we offer
-          </Link>
+          <div className="relative group">
+            <button 
+              className="text-white hover:text-[#AFFE14] transition-colors duration-300 flex items-center"
+              onMouseEnter={() => setShowDropdown(true)}
+            >
+              What we offer
+              <svg className={`w-4 h-4 ml-1 transition-transform duration-300 ${showDropdown ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div 
+              className={`absolute top-full left-0 mt-2 w-64 bg-black/95 backdrop-blur-sm rounded-lg shadow-xl py-2 transition-all duration-300 ${
+                showDropdown ? 'opacity-100 visible' : 'opacity-0 invisible'
+              }`}
+              onMouseEnter={() => setShowDropdown(true)}
+              onMouseLeave={() => setShowDropdown(false)}
+            >
+              <Link href="/services/media-kit" className="block px-4 py-2 text-white hover:bg-[#AFFE14] hover:text-black transition-all duration-300 hover:pl-6">
+                Media Kit Creation
+              </Link>
+              <Link href="/services/brand-deals" className="block px-4 py-2 text-white hover:bg-[#AFFE14] hover:text-black transition-all duration-300 hover:pl-6">
+                Brand Deals Outreach
+              </Link>
+              <Link href="/services/verification" className="block px-4 py-2 text-white hover:bg-[#AFFE14] hover:text-black transition-all duration-300 hover:pl-6">
+                PR + Verification Setup
+              </Link>
+              <Link href="/services/ugc" className="block px-4 py-2 text-white hover:bg-[#AFFE14] hover:text-black transition-all duration-300 hover:pl-6">
+                UGC Portfolio Setup
+              </Link>
+              <Link href="/services/growth" className="block px-4 py-2 text-white hover:bg-[#AFFE14] hover:text-black transition-all duration-300 hover:pl-6">
+                Monthly Influencer Growth Package
+              </Link>
+            </div>
+          </div>
         </nav>
 
         {/* Logo */}
@@ -44,7 +76,7 @@ const Navbar = () => {
             alt="Logo"
             width={120}
             height={65}
-            className="object-contain hover:opacity-90 transition-opacity duration-300"
+            className="object-cover"
             quality={100}
             priority
           />
@@ -55,8 +87,8 @@ const Navbar = () => {
           <Image
             src="/images/logo.png"
             alt="Logo"
-            width={60}
-            height={65}
+            width={40}
+            height={60}
             className="object-cover"
             quality={100}
             priority
@@ -66,7 +98,7 @@ const Navbar = () => {
         {/* Desktop CTA */}
         <div className="hidden md:flex items-center space-x-4 px-10">
           <Link
-            href="/contact"
+            href="/components/Contact"
             className="bg-[#AFFE14] text-[#240141] py-2.5 px-6 rounded-lg font-semibold hover:bg-opacity-90 transition-all duration-300 transform hover:scale-105">
             Enquire Now
           </Link>
@@ -74,7 +106,7 @@ const Navbar = () => {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-white p-2 hover:bg-[#3a0268] rounded-lg transition-colors duration-300"
+          className="md:hidden text-white p-2 rounded-lg transition-colors duration-300"
           onClick={toggleMobileMenu}
           aria-label="Toggle menu">
           {showMobileMenu ? (
@@ -110,32 +142,45 @@ const Navbar = () => {
       </header>
 
       {/* Mobile Menu */}
-      {showMobileMenu && (
-        <div className={`md:hidden bg-[#240141] text-white p-6 shadow-2xl fixed top-[80px] left-0 w-64 h-screen z-50 animate-fadeIn transition-transform duration-300 ${visible ? 'translate-x-0' : '-translate-x-full'}`}>
-          <nav className="flex flex-col space-y-4">
-            <Link
-              href="/"
-              className="py-4 border-b border-[#3a0268] hover:text-[#AFFE14] transition-colors duration-300">
-              Home
-            </Link>
-            <Link
-              href="/work"
-              className="py-4 border-b border-[#3a0268] hover:text-[#AFFE14] transition-colors duration-300">
-              Our Impact
-            </Link>
-            <Link
-              href="#services"
-              className="py-4 border-b border-[#3a0268] hover:text-[#AFFE14] transition-colors duration-300">
-              What we offer
-            </Link>
-            <Link
-              href="/contact"
-              className="mt-6 bg-[#AFFE14] text-[#240141] py-3 px-6 rounded-lg text-center font-semibold hover:bg-opacity-90 transition-all duration-300 transform hover:scale-105">
-              Enquire Now
-            </Link>
-          </nav>
-        </div>
-      )}
+      <div className={`md:hidden fixed top-[80px] left-0 w-64 h-screen z-50 bg-black/95 backdrop-blur-sm transform transition-all duration-300 ease-in-out ${showMobileMenu ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0'}`}>
+        <nav className="flex flex-col space-y-4 p-6">
+          <Link
+            href="/"
+            className="py-4 border-b border-[#3a0268] hover:text-[#AFFE14] transition-colors duration-300 text-white">
+            Home
+          </Link>
+          <Link
+            href="/work"
+            className="py-4 border-b border-[#3a0268] hover:text-[#AFFE14] transition-colors duration-300 text-white">
+            Our Impact
+          </Link>
+          <div className="py-4 border-b border-[#3a0268]">
+            <span className="text-white mb-2 block">What we offer</span>
+            <div className="pl-4 flex flex-col space-y-2">
+              <Link href="/services/media-kit" className="text-gray-300 hover:text-[#AFFE14] transition-colors duration-300">
+                Media Kit Creation
+              </Link>
+              <Link href="/services/brand-deals" className="text-gray-300 hover:text-[#AFFE14] transition-colors duration-300">
+                Brand Deals Outreach
+              </Link>
+              <Link href="/services/verification" className="text-gray-300 hover:text-[#AFFE14] transition-colors duration-300">
+                PR + Verification Setup
+              </Link>
+              <Link href="/services/ugc" className="text-gray-300 hover:text-[#AFFE14] transition-colors duration-300">
+                UGC Portfolio Setup
+              </Link>
+              <Link href="/services/growth" className="text-gray-300 hover:text-[#AFFE14] transition-colors duration-300">
+                Monthly Influencer Growth Package
+              </Link>
+            </div>
+          </div>
+          <Link
+            href="/contact"
+            className="mt-6 bg-[#AFFE14] text-[#240141] py-3 px-6 rounded-lg text-center font-semibold hover:bg-opacity-90 transition-all duration-300 transform hover:scale-105">
+            Enquire Now
+          </Link>
+        </nav>
+      </div>
     </>
   );
 };
