@@ -3,11 +3,13 @@ import Image from "next/image";
 import Link from "next/link";
 
 const Navbar = () => {
+  // State management
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
   const [showDropdown, setShowDropdown] = useState(false);
 
+  // Handle navbar visibility on scroll
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollPos = window.scrollY;
@@ -21,24 +23,36 @@ const Navbar = () => {
 
   const toggleMobileMenu = () => setShowMobileMenu(!showMobileMenu);
 
+  // Service links for both desktop and mobile
+  const serviceLinks = [
+    { href: "/services/Media-kit-creation", label: "Media Kit Creation" },
+    { href: "/services/brand-deals", label: "Brand Deals Outreach" },
+    { href: "/services/verification", label: "PR + Verification Setup" },
+    { href: "/services/ugc", label: "UGC Portfolio Setup" },
+    { href: "/services/growth", label: "Monthly Influencer Growth Package" }
+  ];
+
   return (
     <>
       {/* Navigation Section */}
-      <header className={`flex justify-between items-center backdrop-blur-[2px]  border-r-[8px] border-l-[8px]  fixed top-0 left-0 right-0 px-6 py-5 z-50 transition-transform duration-300 ${visible ? 'translate-y-0' : '-translate-y-full'}`}>
+      <header className={`flex bg-black/10 justify-between items-center backdrop-blur-[2px] border-b border-gray-50/20 fixed top-0 left-0 right-0 px-6 sm:py-6 py-0 z-50 transition-transform duration-300 ${visible ? 'translate-y-0' : '-translate-y-full'}`}>
+        {/* DESKTOP VIEW */}
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-8 mx-10 py-5">
-          <Link href="/" className="text-white hover:text-[#AFFE14] transition-colors duration-300">
-            Home
+        <nav className="hidden md:flex items-center space-x-8 mx-10 py-5 text-[16px] font-semibold">
+          <Link href="/" className="text-white relative group">
+            <span>Home</span>
+            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#536a26] transition-all duration-300 group-hover:w-full"></span>
           </Link>
-          <Link href="#results" className="text-white hover:text-[#AFFE14] transition-colors duration-300">
-            Our Impact
+          <Link href="#results" className="text-white relative group">
+            <span>Our Impact</span>
+            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#536a26] transition-all duration-300 group-hover:w-full"></span>
           </Link>
           <div className="relative group">
             <button 
-              className="text-white hover:text-[#AFFE14] transition-colors duration-300 flex items-center"
+              className="text-white flex items-center relative"
               onMouseEnter={() => setShowDropdown(true)}
             >
-              What we offer
+              <span>What we offer</span>
               <svg className={`w-4 h-4 ml-1 transition-transform duration-300 ${showDropdown ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
               </svg>
@@ -50,46 +64,27 @@ const Navbar = () => {
               onMouseEnter={() => setShowDropdown(true)}
               onMouseLeave={() => setShowDropdown(false)}
             >
-              <Link href="/services/media-kit" className="block px-4 py-2 text-white hover:bg-[#AFFE14] hover:text-black transition-all duration-300 hover:pl-6">
-                Media Kit Creation
-              </Link>
-              <Link href="/services/brand-deals" className="block px-4 py-2 text-white hover:bg-[#AFFE14] hover:text-black transition-all duration-300 hover:pl-6">
-                Brand Deals Outreach
-              </Link>
-              <Link href="/services/verification" className="block px-4 py-2 text-white hover:bg-[#AFFE14] hover:text-black transition-all duration-300 hover:pl-6">
-                PR + Verification Setup
-              </Link>
-              <Link href="/services/ugc" className="block px-4 py-2 text-white hover:bg-[#AFFE14] hover:text-black transition-all duration-300 hover:pl-6">
-                UGC Portfolio Setup
-              </Link>
-              <Link href="/services/growth" className="block px-4 py-2 text-white hover:bg-[#AFFE14] hover:text-black transition-all duration-300 hover:pl-6">
-                Monthly Influencer Growth Package
-              </Link>
+              {serviceLinks.map((service, index) => (
+                <Link 
+                  key={index}
+                  href={service.href} 
+                  className="block px-4 py-2 text-white hover:bg-[#AFFE14] hover:text-black transition-all duration-300 hover:pl-6"
+                >
+                  <span>{service.label}</span>
+                </Link>
+              ))}
             </div>
           </div>
         </nav>
 
-        {/* Logo */}
-        <Link href="/" className="w-16 absolute left-[50%] transform -translate-x-1/2 hidden md:flex items-center">
+        {/* Desktop Logo */}
+        <Link href="/" className="absolute mt-2 left-[50%] transform -translate-x-1/2 hidden md:flex items-center">
           <Image
-            src="/images/logo.png"
+            src="/images/logo2.png"
             alt="Logo"
             width={120}
             height={65}
-            className="object-cover"
-            quality={100}
-            priority
-          />
-        </Link>
-
-        {/* Mobile Logo - Left Aligned */}
-        <Link href="/" className="md:hidden flex items-center">
-          <Image
-            src="/images/logo.png"
-            alt="Logo"
-            width={40}
-            height={60}
-            className="object-cover"
+            className="object-cover w-[120px] h-full"
             quality={100}
             priority
           />
@@ -99,10 +94,27 @@ const Navbar = () => {
         <div className="hidden md:flex items-center space-x-4 px-10">
           <Link
             href="/components/Contact"
-            className="bg-[#AFFE14] text-[#240141] py-2.5 px-6 rounded-lg font-semibold hover:bg-opacity-90 transition-all duration-300 transform hover:scale-105">
-            Enquire Now
+            className="relative inline-flex items-center justify-start px-6 py-2.5 overflow-hidden font-semibold rounded-full group">
+            <span className="w-32 h-32 rotate-45 translate-x-12 -translate-y-2 absolute left-0 top-0 bg-white opacity-[3%]"></span>
+            <span className="absolute top-0 left-0 w-48 h-48 -mt-1 transition-all duration-500 ease-in-out rotate-45 -translate-x-56 -translate-y-24 bg-[#AFFE14] opacity-100 group-hover:-translate-x-8"></span>
+            <span className="relative w-full text-left text-white transition-colors duration-200 ease-in-out group-hover:text-[#240141]">Enquire Now</span>
+            <span className="absolute inset-0 border-2 border-[#AFFE14] rounded-full"></span>
           </Link>
         </div>
+
+        {/* MOBILE VIEW */}
+        {/* Mobile Logo - Left Aligned */}
+        <Link href="/" className="md:hidden flex items-center">
+          <Image
+            src="/images/logo2.png"
+            alt="Logo"
+            width={60}
+            height={60}
+            className="object-cover w-[90px] h-full"
+            quality={100}
+            priority
+          />
+        </Link>
 
         {/* Mobile Menu Button */}
         <button
@@ -141,46 +153,7 @@ const Navbar = () => {
         </button>
       </header>
 
-      {/* Mobile Menu */}
-      <div className={`md:hidden fixed top-[80px] left-0 w-64 h-screen z-50 bg-black/95 backdrop-blur-sm transform transition-all duration-300 ease-in-out ${showMobileMenu ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0'}`}>
-        <nav className="flex flex-col space-y-4 p-6">
-          <Link
-            href="/"
-            className="py-4 border-b border-[#3a0268] hover:text-[#AFFE14] transition-colors duration-300 text-white">
-            Home
-          </Link>
-          <Link
-            href="/work"
-            className="py-4 border-b border-[#3a0268] hover:text-[#AFFE14] transition-colors duration-300 text-white">
-            Our Impact
-          </Link>
-          <div className="py-4 border-b border-[#3a0268]">
-            <span className="text-white mb-2 block">What we offer</span>
-            <div className="pl-4 flex flex-col space-y-2">
-              <Link href="/services/media-kit" className="text-gray-300 hover:text-[#AFFE14] transition-colors duration-300">
-                Media Kit Creation
-              </Link>
-              <Link href="/services/brand-deals" className="text-gray-300 hover:text-[#AFFE14] transition-colors duration-300">
-                Brand Deals Outreach
-              </Link>
-              <Link href="/services/verification" className="text-gray-300 hover:text-[#AFFE14] transition-colors duration-300">
-                PR + Verification Setup
-              </Link>
-              <Link href="/services/ugc" className="text-gray-300 hover:text-[#AFFE14] transition-colors duration-300">
-                UGC Portfolio Setup
-              </Link>
-              <Link href="/services/growth" className="text-gray-300 hover:text-[#AFFE14] transition-colors duration-300">
-                Monthly Influencer Growth Package
-              </Link>
-            </div>
-          </div>
-          <Link
-            href="/contact"
-            className="mt-6 bg-[#AFFE14] text-[#240141] py-3 px-6 rounded-lg text-center font-semibold hover:bg-opacity-90 transition-all duration-300 transform hover:scale-105">
-            Enquire Now
-          </Link>
-        </nav>
-      </div>
+   
     </>
   );
 };

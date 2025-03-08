@@ -53,7 +53,7 @@ const AboutUs = () => {
   }, []);
 
   return (
-    <section className="relative h-[100vh] bg-black text-white py-24  ">
+    <section className="relative h-[100vh] bg-black text-white py-10  ">
       <div className="lg:max-w-[1300px] mx-auto px-4 mt-10 border-4 border-[#AFFE14] rounded-3xl">
         <div className="grid md:grid-cols-2 gap-8 sm:gap-32 items-center mb-6 sm:mb-10">
           <div ref={imageRef} className="relative h-[300px] sm:h-[400px] md:h-[500px] w-full rounded-lg overflow-hidden">
