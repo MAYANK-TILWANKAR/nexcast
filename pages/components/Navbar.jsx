@@ -13,7 +13,14 @@ const Navbar = () => {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollPos = window.scrollY;
-      setVisible(prevScrollPos > currentScrollPos || currentScrollPos < 10);
+      const isScrollingUp = prevScrollPos > currentScrollPos;
+      const isAtTop = currentScrollPos < 10;
+      
+      // Only update visibility if there's a significant scroll
+      if (Math.abs(prevScrollPos - currentScrollPos) > 10) {
+        setVisible(isScrollingUp || isAtTop);
+      }
+      
       setPrevScrollPos(currentScrollPos);
     };
 
@@ -35,10 +42,16 @@ const Navbar = () => {
   return (
     <>
       {/* Navigation Section */}
-      <header className={`flex bg-black/10 justify-between items-center backdrop-blur-[2px] border-b border-gray-50/20 fixed top-0 left-0 right-0 px-6 sm:py-6 py-0 z-50 transition-transform duration-300 ${visible ? 'translate-y-0' : '-translate-y-full'}`}>
+      <header 
+        className={`flex bg-black/30 border border-white/20 justify-between items-center backdrop-blur-[2px] fixed top-4 left-1/2 -translate-x-1/2 right-0 px-6 sm:py-4 mt-5 py-0 z-50 rounded-full w-[95%] max-w-[1400px] mx-auto
+        transition-all duration-700 ease-in-out transform
+        ${visible 
+          ? 'translate-y-0 opacity-100 rotate-0 scale-100' 
+          : '-translate-y-full opacity-0 -rotate-6 scale-95'}`}
+      >
         {/* DESKTOP VIEW */}
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-8 mx-10 py-5 text-[16px] font-semibold">
+        <nav className="hidden md:flex items-center space-x-8 mx-10 text-[16px] font-semibold">
           <Link href="/" className="text-white relative group">
             <span>Home</span>
             <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#536a26] transition-all duration-300 group-hover:w-full"></span>
@@ -51,6 +64,7 @@ const Navbar = () => {
             <button 
               className="text-white flex items-center relative"
               onMouseEnter={() => setShowDropdown(true)}
+              onMouseLeave={() => setShowDropdown(false)}
             >
               <span>What we offer</span>
               <svg className={`w-4 h-4 ml-1 transition-transform duration-300 ${showDropdown ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -59,7 +73,7 @@ const Navbar = () => {
             </button>
             <div 
               className={`absolute top-full left-0 mt-2 w-64 bg-black/95 backdrop-blur-sm rounded-lg shadow-xl py-2 transition-all duration-300 ${
-                showDropdown ? 'opacity-100 visible' : 'opacity-0 invisible'
+                showDropdown ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'
               }`}
               onMouseEnter={() => setShowDropdown(true)}
               onMouseLeave={() => setShowDropdown(false)}
@@ -151,9 +165,32 @@ const Navbar = () => {
             </svg>
           )}
         </button>
-      </header>
 
-   
+        {/* Mobile Menu */}
+        {showMobileMenu && (
+          <div className="absolute top-full left-0 right-0 bg-black/95 backdrop-blur-sm mt-4 p-4 rounded-lg md:hidden">
+            <nav className="flex flex-col space-y-4">
+              <Link href="/" className="text-white hover:text-[#AFFE14]">Home</Link>
+              <Link href="#results" className="text-white hover:text-[#AFFE14]">Our Impact</Link>
+              {serviceLinks.map((service, index) => (
+                <Link 
+                  key={index}
+                  href={service.href}
+                  className="text-white hover:text-[#AFFE14] pl-4"
+                >
+                  {service.label}
+                </Link>
+              ))}
+              <Link
+                href="/components/Contact"
+                className="text-white hover:text-[#AFFE14] font-semibold"
+              >
+                Enquire Now
+              </Link>
+            </nav>
+          </div>
+        )}
+      </header>
     </>
   );
 };

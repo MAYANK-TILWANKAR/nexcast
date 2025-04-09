@@ -10,14 +10,14 @@ import Banner from "./components/Banner";
 import Home2 from "./components/Home2";
 import Chooseus from "./components/Chooseus";
 import Industries from "./components/Industries";
-
+import Balls from "./components/Balls";
 const Index = () => {
   return (
-    <>
-      <div className="overflow-x-hidden">
-        <div className="hidden md:block">
-          <Home />
-        </div>
+    <div className="overflow-hidden">
+
+     
+          {/* <Home /> */}
+ 
 <Home2/>
         <Banner />
         <About />
@@ -32,9 +32,10 @@ const Index = () => {
         </div>
      
         <Work />
+        <Balls/>
         <Footer />
-      </div>
-    </>
+
+    </div>
   );
 };
 
