@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-import Image from "next/image";
+import Link from "next/link";
 
 const Contactus = () => {
   return (
@@ -22,12 +22,12 @@ const Contactus = () => {
           <nav className="bg-gray-200/20 backdrop-blur-sm rounded-full px-4 sm:px-6 mt-4 z-0 py-2">
             <ol className="flex text-center justify-center">
               <li>
-                <a
+                <Link
                   className="text-white hover:text-[#AFFE14] transition-colors text-sm sm:text-base"
                   href="/"
                 >
                   Home
-                </a>
+                </Link>
               </li>
               <li>
                 <span className="mx-2 text-white font-semibold">&gt;</span>
