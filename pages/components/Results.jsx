@@ -7,7 +7,7 @@ import "swiper/css";
 
 const OurResults = () => {
   return (
-    <section className="text-center py-10 md:py-20 px-4 md:px-0 bg-gradient-to-b from-[#240141] to-black">
+    <section className="text-center py-10 md:py-5 px-4 md:px-0 bg-gradient-to-b from-[#240141] to-black">
       {/* <h2 className="text-3xl md:text-4xl font-bold mb-4 md:mb-6">
         Our Results
       </h2>
@@ -60,7 +60,7 @@ const OurResults = () => {
         </div>
       </div> */}
 
-      <p className="text-gray-50 mt-16 md:mt-24 text-sm md:text-base">
+      <p className="text-gray-50 mt-16 md:mt-24 text-sm md:text-3xl">
         And we&apos;ve spent 3 years doing it with great teams at
       </p>
       <Image

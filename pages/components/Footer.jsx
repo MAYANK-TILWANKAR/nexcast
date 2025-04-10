@@ -1,9 +1,9 @@
 import React from "react";
-
+import Link from "next/link";
 const Footer = () => {
   return (
     <>
-      <footer className="text-white py-5 px-7 sm:px-20 pt-5 bg-black">
+      <footer className="text-white py-5 px-7 sm:px-20 pt-5 bg-[#1A1A1A]">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 relative z-10">
           {/* Left Section */}
           <div className="space-y-4">
@@ -110,6 +110,11 @@ const Footer = () => {
                 @NexcastOfficial
               </a>
             </p>
+            <div>
+              <p className="text-gray-400 text-base mr-12">
+                Designed and Developed by <Link href="https://noxalgo.com" className="hover:text-[#AFFE14] transition duration-300">Noxalgo LLP</Link>
+              </p>
+            </div>
             <div className="flex space-x-4 mt-4 md:mt-0">
               <a
                 href="#"

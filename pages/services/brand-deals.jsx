@@ -4,10 +4,10 @@ import Link from "next/link";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
-const MediaKitCreation = () => {
+const BrandDealsOutreach = () => {
   const [formData, setFormData] = useState({
     name: "",
-    email: "", 
+    email: "",
     socialHandle: "",
     phone: "",
     niche: "",
@@ -36,7 +36,7 @@ const MediaKitCreation = () => {
           <div className="absolute inset-0 bg-black/60"></div>
           <div className="lg:mt-10 flex items-center justify-center flex-col w-full mt-10 ">
             <h3 className="text-3xl text-center lg:text-5xl text-white relative z-0 mx-auto font-bold font-lora tracking-wider">
-              Media Kit Creation
+              Brand Deals Outreach
             </h3>
             <nav className="bg-gray-200/20 rounded-full px-6 mt-4 z-0 py-2">
               <ol className="flex text-center justify-center">
@@ -47,134 +47,106 @@ const MediaKitCreation = () => {
                   <span className="mx-2 text-white font-semibold">&gt;</span>
                 </li>
                 <li>
-                  <span className="text-white font-semibold">Media Kit Creation</span>
+                  <span className="text-white font-semibold">Brand Deals Outreach</span>
                 </li>
               </ol>
             </nav>
           </div>
         </div>
 
-        <div className="lg:max-w-[1300px] mx-auto px-4 py-20 ">
-          <div className="flex flex-col lg:flex-row items-center gap-32 mt-10 ">
+        <div className="lg:max-w-[1300px] mx-auto px-4 py-20">
+          <div className="flex flex-col lg:flex-row items-center gap-32 mt-10">
             <div className="lg:w-1/2 text-center lg:text-left">
               <h2 className="text-4xl lg:text-5xl font-bold mb-8 leading-tight text-white font-[&apos;masiku&apos;]">
                 Professional <br className="hidden lg:block" />
-                <span className="text-white font-[&apos;masiku&apos;]">Media Kit</span> Creation
+                <span className="text-white font-[&apos;masiku&apos;]">Brand Outreach</span> Service
               </h2>
               <p className="text-lg text-gray-100 leading-relaxed max-w-2xl lg:max-w-none mx-auto">
-                Stand out to brands with a professionally designed media kit that showcases your unique value as an influencer. Our media kits are tailored to highlight your personal brand, audience demographics, and previous collaborations to help you secure more partnerships.
+                Let us handle your brand partnerships while you focus on creating amazing content. Our team of outreach specialists will connect you with relevant brands and secure paid collaborations on your behalf.
               </p>
-              <div className="mt-6 bg-green-100 p-4 rounded-lg border-2 border-green-500 inline-block">
-                <p className="text-green-900 font-bold">FREE for the first 10 influencers who apply!</p>
-              </div>
             </div>
-            <div className="lg:w-1/2 ">
+            <div className="lg:w-1/2">
               <div className="relative">
-                <div className="absolute "></div>
                 <Image
                   src="/images/media-kit.png"
-                  alt="Media Kit Example"
+                  alt="Brand Outreach"
                   width={500}
                   height={300}
-                  className="rounded-lg object-cover  relative z-1   "
+                  className="rounded-lg object-cover relative z-1"
                 />
               </div>
             </div>
           </div>
 
           <div className="text-center mb-20 pt-20">
-            <h2 className="text-4xl font-bold text-white">What&apos;s Included in Your Media Kit</h2>
+            <h2 className="text-4xl font-bold text-white">What&apos;s Included</h2>
             <div className="h-1 w-32 bg-blue-600 mx-auto mt-4"></div>
             <p className="text-gray-300 mt-6 max-w-2xl mx-auto">
-              Every element of your media kit is carefully crafted to showcase your unique value proposition and help you stand out to potential brand partners.
+              Our comprehensive brand outreach service includes everything you need to secure more paid collaborations.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="bg-white/5 backdrop-blur-lg p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-blue-500/20">
               <div className="bg-blue-500/10 w-16 h-16 rounded-full flex items-center justify-center mb-6">
-                <svg className="w-8 h-8 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                <svg className="w-8 h-8 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4" />
                 </svg>
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-white">Cover Page</h3>
+              <h3 className="text-2xl font-bold mb-4 text-white">100 Monthly Outreach Messages</h3>
               <p className="text-gray-300 leading-relaxed">
-                Eye-catching cover with your name, niche, and professional profile photo to make a strong first impression on brands.
+                We send 100 personalized cold emails and DMs to relevant brands in your niche every month.
               </p>
             </div>
 
             <div className="bg-white/5 backdrop-blur-lg p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-blue-500/20">
               <div className="bg-blue-500/10 w-16 h-16 rounded-full flex items-center justify-center mb-6">
-                <svg className="w-8 h-8 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                <svg className="w-8 h-8 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
                 </svg>
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-white">About Me Section</h3>
+              <h3 className="text-2xl font-bold mb-4 text-white">Custom Pitching Strategy</h3>
               <p className="text-gray-300 leading-relaxed">
-                Compelling bio that tells your story, highlights your unique perspective, and explains why brands should work with you.
+                Tailored outreach approach based on your niche, audience, and brand preferences.
               </p>
             </div>
 
             <div className="bg-white/5 backdrop-blur-lg p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-blue-500/20">
               <div className="bg-blue-500/10 w-16 h-16 rounded-full flex items-center justify-center mb-6">
-                <svg className="w-8 h-8 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                <svg className="w-8 h-8 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                 </svg>
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-white">Audience Stats</h3>
+              <h3 className="text-2xl font-bold mb-4 text-white">Tracking & Reporting</h3>
               <p className="text-gray-300 leading-relaxed">
-                Detailed breakdown of your engagement rate, audience demographics, and reach to demonstrate your influence to potential partners.
+                Comprehensive tracking sheet and monthly reports showing outreach performance and responses.
               </p>
             </div>
 
             <div className="bg-white/5 backdrop-blur-lg p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-blue-500/20">
               <div className="bg-blue-500/10 w-16 h-16 rounded-full flex items-center justify-center mb-6">
-                <svg className="w-8 h-8 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                <svg className="w-8 h-8 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-white">Past Collaborations</h3>
+              <h3 className="text-2xl font-bold mb-4 text-white">Automated Follow-ups</h3>
               <p className="text-gray-300 leading-relaxed">
-                Showcase of your previous brand partnerships and successful campaigns to build credibility with potential collaborators.
-              </p>
-            </div>
-
-            <div className="bg-white/5 backdrop-blur-lg p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-blue-500/20">
-              <div className="bg-blue-500/10 w-16 h-16 rounded-full flex items-center justify-center mb-6">
-                <svg className="w-8 h-8 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                </svg>
-              </div>
-              <h3 className="text-2xl font-bold mb-4 text-white">Services Offered</h3>
-              <p className="text-gray-300 leading-relaxed">
-                Clear presentation of your services including UGC creation, brand deals, PR unboxings, and other collaboration opportunities.
-              </p>
-            </div>
-
-            <div className="bg-white/5 backdrop-blur-lg p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-blue-500/20">
-              <div className="bg-blue-500/10 w-16 h-16 rounded-full flex items-center justify-center mb-6">
-                <svg className="w-8 h-8 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                </svg>
-              </div>
-              <h3 className="text-2xl font-bold mb-4 text-white">Contact Information</h3>
-              <p className="text-gray-300 leading-relaxed">
-                Professional presentation of your contact details making it easy for brands to reach out and start collaborations.
+                Strategic follow-up sequence to maximize response rates and secure more deals.
               </p>
             </div>
           </div>
 
           <div className="mt-20 bg-gray-50 p-12 border-t-4 border-l-4 border-r-4 border-b-4 rounded-3xl border-blue-800">
-            <h2 className="text-3xl font-bold mb-6">Why You Need a Professional Media Kit</h2>
+            <h2 className="text-3xl font-bold mb-6">Why Choose Our Brand Outreach Service?</h2>
             <p className="text-gray-700 leading-relaxed mb-8">
-              A professionally designed media kit is essential for influencers looking to secure brand partnerships. It serves as your business card in the digital world, showcasing your value proposition at a glance. Brands receive countless partnership requests daily - a polished media kit helps you stand out from the crowd and demonstrates your professionalism. Our expertly crafted media kits highlight your unique strengths and audience value, significantly increasing your chances of securing paid collaborations and long-term brand relationships.
+              Securing brand deals can be time-consuming and challenging. Our experienced team handles everything from identifying potential partners to negotiating deals, allowing you to focus on content creation. With our proven outreach strategies and extensive brand network, we help influencers like you land more paid collaborations and grow their business.
             </p>
           </div>
 
           <div className="mt-20 text-center bg-gradient-to-br from-blue-50 to-blue-100 p-12 rounded-2xl shadow-lg">
-            <h2 className="text-3xl font-bold mb-6">Apply for Your FREE Media Kit</h2>
+            <h2 className="text-3xl font-bold mb-6">Get Started with Brand Outreach</h2>
             <p className="text-xl mb-8 text-gray-700">
-              We&apos;re offering completely FREE media kit creation for the first 10 influencers who apply. Fill out the form below to secure your spot!
+              Fill out the form below to learn more about our brand outreach service and how we can help you secure more paid collaborations.
             </p>
 
             <form onSubmit={handleSubmit} className="mt-12 max-w-2xl mx-auto">
@@ -240,7 +212,7 @@ const MediaKitCreation = () => {
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
-                  placeholder="Tell us about your content and why you&apos;d like a media kit"
+                  placeholder="Tell us about your content and goals for brand collaborations"
                   rows="4"
                   className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
                   required
@@ -261,4 +233,4 @@ const MediaKitCreation = () => {
   );
 };
 
-export default MediaKitCreation;
+export default BrandDealsOutreach;

@@ -36,14 +36,15 @@ const Navbar = () => {
     { href: "/services/brand-deals", label: "Brand Deals Outreach" },
     { href: "/services/verification", label: "PR + Verification Setup" },
     { href: "/services/ugc", label: "UGC Portfolio Setup" },
-    { href: "/services/growth", label: "Monthly Influencer Growth Package" }
+    { href: "/services/growth", label: "Monthly Influencer Growth Package" },
+    { href: "/services/social-media-management", label: "Social Media Management" }
   ];
 
   return (
     <>
       {/* Navigation Section */}
       <header 
-        className={`flex bg-black/30 border border-white/20 justify-between items-center backdrop-blur-[2px] fixed top-4 left-1/2 -translate-x-1/2 right-0 px-6 sm:py-4 mt-5 py-0 z-50 rounded-full w-[95%] max-w-[1400px] mx-auto
+        className={`flex bg-black/30 border border-white/20 justify-between items-center backdrop-blur-[2px] fixed top-4 left-1/2 -translate-x-1/2 right-0 px-6 sm:py-4 mt-5 py-0 z-50 rounded-full w-[95%] max-w-[1300px] mx-auto
         transition-all duration-700 ease-in-out transform
         ${visible 
           ? 'translate-y-0 opacity-100 rotate-0 scale-100' 
